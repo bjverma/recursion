@@ -1,0 +1,18 @@
+"""
+Given a string, compute recursively a new string where all 'x' chars have been removed.
+"""
+def removeX(string):
+
+    if len(string)==0:
+        return string
+    smaller_str = string[1:]
+    smaller_output = removeX(smaller_str)
+    if string[0]=="x":
+        return smaller_output
+    else:
+        return string[0]+smaller_output
+
+# Main
+string = input()
+print(removeX(string))
+
