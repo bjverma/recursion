@@ -1,0 +1,22 @@
+def checkNumber(arr, x):
+    
+    l=len(arr)
+    if l==0:
+        return False
+    if arr[0]==x:
+        return True
+    smaller_list = arr[1:]
+    smaller_list_op = checkNumber(smaller_list, x)
+    return smaller_list_op
+
+# Main
+from sys import setrecursionlimit
+setrecursionlimit(11000)
+#n space seperated input
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+x=int(input())
+if checkNumber(arr, x):
+    print('true')
+else:
+    print('false')
