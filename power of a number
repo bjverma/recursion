@@ -1,0 +1,11 @@
+def pow(x,n):
+    if x==0 or n==0:
+        return 1
+    small_op = pow(x, n//2)
+    if n%2 ==0:
+        return small_op*small_op
+    else:
+        return x*small_op*small_op
+x = int(input("enter x: "))
+n = int(input("enter n"))
+print(pow(x,n))
