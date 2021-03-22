@@ -1,0 +1,18 @@
+def removeConsecutiveDuplicates(string):
+    if len(string)==0 or len(string)==1:
+        return string
+    if string[0]==string[1]:
+    #it may be possible that same character is repeating.
+        i=1
+        while i<len(string) and string[0]==string[i]:
+            i+=1
+        return string[0]+ removeConsecutiveDuplicates(string[i:])
+    else:
+        return string[0]+ removeConsecutiveDuplicates(string[1:])
+
+    
+
+# Main
+string = input()
+print(removeConsecutiveDuplicates(string))
+
